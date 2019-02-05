@@ -1,0 +1,13 @@
+@relation claims
+
+@attribute providerType {IN_NETWORK, OUT_NETWORK}
+@attribute claimAmount numeric
+@attribute provDetailsReq {TRUE, FALSE}
+
+@data
+IN_NETWORK,3500,FALSE
+OUT_NETWORK,3500,TRUE
+IN_NETWORK,2500,FALSE
+OUT_NETWORK,2500,FALSE
+IN_NETWORK,4000,TRUE
+OUT_NETWORK,4500,TRUE

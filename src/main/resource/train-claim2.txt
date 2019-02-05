@@ -1,0 +1,16 @@
+@relation claims
+
+@attribute city {Atlanta,Miami,Charlotte}
+@attribute claimType {Medical, Dental,Pharmacy}
+@attribute serviceType {Angiography}
+@attribute claimAmount numeric
+@attribute provDetailsReq {TRUE, FALSE}
+
+@data
+Atlanta,Medical,Angiography,3500,FALSE
+Atlanta,Medical,Angiography,6000,TRUE
+Miami,Medical,Angiography,3500,FALSE
+Miami,Medical,Angiography,6000,FALSE
+Miami,Medical,Angiography,8000,TRUE
+Charlotte,Medical,Angiography,5000,FALSE
+Charlotte,Medical,Angiography,8000,TRUE
