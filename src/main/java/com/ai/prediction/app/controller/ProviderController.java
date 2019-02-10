@@ -27,9 +27,15 @@ public class ProviderController {
 private ProviderService providerService;
 	
 	@GetMapping("/providerId/{providerId}")
-	public List<Provider> getProviderInfo(@PathVariable(value="providerId") String providerId)
+	public Provider getProviderInfo(@PathVariable(value="providerId") String providerId)
 	{
-		return providerService.getProviderList(providerId);
+		Provider provider= null;
+		List<Provider> providers=providerService.getProviderList(providerId);
+		if(providers!=null && !providers.isEmpty())
+		{
+			provider=providers.get(0);
+		}
+		return provider;
 		
 	}
 	

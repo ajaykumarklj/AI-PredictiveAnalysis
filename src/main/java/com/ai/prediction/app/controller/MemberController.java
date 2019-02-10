@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ai.prediction.app.model.Member;
+import com.ai.prediction.app.model.Provider;
 import com.ai.prediction.app.service.MemberService;
 
 @RestController
@@ -27,9 +28,16 @@ public class MemberController {
 private MemberService memberService;
 	
 	@GetMapping("/memberId/{memberId}")
-	public List<Member> getMemberInfo(@PathVariable(value = "memberId") String memberId) {
+	public Member getMemberInfo(@PathVariable(value = "memberId") String memberId) {
 		
-	    return memberService.getMemberInfo(memberId);
+		Member member= null;
+		List<Member> members=memberService.getMemberInfo(memberId);
+		if(members!=null && !members.isEmpty())
+		{
+			member=members.get(0);
+		}
+		return member;
+	    //return memberService.getMemberInfo(memberId);
 	}
 	
 	@PostMapping("/add")
